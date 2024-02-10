@@ -2,7 +2,8 @@ import SwiftUI
 
 struct BookEditView: View {
 
-    @Binding var book: Book
+    //@Binding var book: Book
+    @Bindable var book: Book
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -34,5 +35,5 @@ struct BookEditView: View {
 }
 
 #Preview {
-    BookEditView(book:  .constant(Book(title: "title")))
+    BookEditView(book: Book(title: "title"))
 }

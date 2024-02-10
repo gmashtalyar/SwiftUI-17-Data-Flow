@@ -1,7 +1,9 @@
 import Foundation
+import SwiftUI
+import Observation
 
-class Library: ObservableObject {
-    @Published var books: [Book] = Book.examples()
+@Observable class Library {
+    var books: [Book] = Book.examples()
     
     var availableBooksCount: Int {
         books.filter(\.isAvailable).count
@@ -18,4 +20,15 @@ class Library: ObservableObject {
     func iconName(for book: Book) -> String {
         icons[book.iconIndex]
     }
+}
+
+extension EnvironmentValues {
+    var library: Library {
+        get { self[LibraryKey.self] }
+        set { self[LibraryKey.self] = newValue}
+    }
+}
+
+private struct LibraryKey: EnvironmentKey {
+    static var defaultValue: Library = Library()
 }
