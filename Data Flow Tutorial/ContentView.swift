@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Data Flow Tutorial
-//
-//  Created by Геннадий Машталяр on 09.02.2024.
-//
-
 import SwiftUI
 
 struct ContentView: View {

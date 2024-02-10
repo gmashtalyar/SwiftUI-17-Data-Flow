@@ -1,17 +1,15 @@
-//
-//  Data_Flow_TutorialApp.swift
-//  Data Flow Tutorial
-//
-//  Created by Геннадий Машталяр on 09.02.2024.
-//
-
 import SwiftUI
 
 @main
 struct Data_Flow_TutorialApp: App {
+    
+    @StateObject private var library = Library()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            LibraryView()
+                .environmentObject(library)
         }
     }
 }
